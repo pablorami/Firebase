@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "654142996973",
+    "firebase_url": "https://nstc-b9bf8.firebaseio.com",
+    "project_id": "nstc-b9bf8",
+    "storage_bucket": "nstc-b9bf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654142996973:android:61f6fce6323fa2388327e4",
+        "android_client_info": {
+          "package_name": "org.example.leerdatosfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654142996973-pm36d1glqgalh40jrbdd6mk44up0qes7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.example.leerdatosfirebase",
+            "certificate_hash": "4cf1e9c9500fa53622ce5d47092c30cd36647031"
+          }
+        },
+        {
+          "client_id": "654142996973-8foen7b226tl4th1946a5nhhltlo8bgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSHrhWzN3WqloV7-kBnTy6QQGZE-i0oJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654142996973-8foen7b226tl4th1946a5nhhltlo8bgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
