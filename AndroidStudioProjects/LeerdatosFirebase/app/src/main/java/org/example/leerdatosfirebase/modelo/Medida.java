@@ -2,27 +2,27 @@ package org.example.leerdatosfirebase.modelo;
 
 public class Medida {
 
-    private int temperatura;
-    private int humedad;
+    private int Temperatura;
+    private int Humedad;
 
 
     public Medida(){}
 
 
     public int getTemperatura() {
-        return temperatura;
+        return Temperatura;
     }
 
     public int getHumedad() {
-        return humedad;
+        return Humedad;
     }
 
-    public void setTemperatura(int temperatura) {
-        this.temperatura = temperatura;
+    public void setTemperatura(int Temperatura) {
+        this.Temperatura = Temperatura;
     }
 
-    public void setHumedad(int humedad) {
-        this.humedad = humedad;
+    public void setHumedad(int Humedad) {
+        this.Humedad = Humedad;
     }
 
 
@@ -31,7 +31,7 @@ public class Medida {
     @Override
     public String toString() {
         return "Medida: \n" +
-                "  temperatura=" + temperatura + "\n" +
-                "  humedad=" + humedad + "\n" ;
+                "  temperatura=" + Temperatura + "\n" +
+                "  humedad=" + Humedad + "\n" ;
     }
 }

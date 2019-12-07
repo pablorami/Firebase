@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //Instancia a la base de datos
         FirebaseDatabase fdb = FirebaseDatabase.getInstance();
         //apuntamos al nodo que queremos leer
-        DatabaseReference myRef = fdb.getReference("Medida");
+        DatabaseReference myRef = fdb.getReference("medida");
 
         //Agregamos un ValueEventListener para que los cambios que se hagan en la base de datos
         //se reflejen en la aplicacion
@@ -37,14 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
-
                 //leeremos un objeto de tipo Estudiante
                 GenericTypeIndicator<Medida> t = new GenericTypeIndicator<Medida>() {};
                 Medida medida = dataSnapshot.getValue(t);
 
                 //formamos el resultado en un string
                 String resultado = "Como objeto java:\n\n";
-                System.out.println(medida + "HOLAAAAAAAAAAAAAAAA");
+                System.out.println(medida + "HOLAAAAAAAAAAAAAAAA"+medida.getTemperatura()+medida.getHumedad());
                 resultado += medida + "\n";
                 resultado += "Propiedad Estudiante:\nNombre completo: " +medida.getTemperatura();
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 resultado += dataSnapshot.child("temperatura").toString()+  "\n";
 
                 //leemos un nodo hijo del nodo estudiante
-                resultado += "\n Key: " + dataSnapshot.child("temeperatura").getKey()+"\n";
+                resultado += "\n Key: " + dataSnapshot.child("temperatura").getKey()+"\n";
                 resultado += "\n Valor: " + dataSnapshot.child("temperatura").getValue(String.class);
 
 
