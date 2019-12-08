@@ -43,25 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
                 //formamos el resultado en un string
                 String resultado = "Como objeto java:\n\n";
-                System.out.println(medida + "HOLAAAAAAAAAAAAAAAA"+medida.getTemperatura()+medida.getHumedad());
                 resultado += medida + "\n";
-                resultado += "Propiedad Estudiante:\nNombre completo: " +medida.getTemperatura();
-
-                //Tambien podemos leer los datos como un string
-                resultado += "\n\n-----------------------------\n\n";
-                resultado += "Como JSON:\n\n";
-                resultado += dataSnapshot.getValue().toString();
-
-                resultado += "\n\nHijo de Estudiante -> nombre_completo\n";
-
-                resultado += dataSnapshot.child("temperatura").toString()+  "\n";
-
-                //leemos un nodo hijo del nodo estudiante
-                resultado += "\n Key: " + dataSnapshot.child("temperatura").getKey()+"\n";
-                resultado += "\n Valor: " + dataSnapshot.child("temperatura").getValue(String.class);
-
-
-
+                resultado += "Propiedad medida:\nTemperatura: " +medida.getTemperatura()+"\nHumedad: "+medida.getHumedad();
 
                 //mostramos en el textview
                 textview.setText(resultado);
