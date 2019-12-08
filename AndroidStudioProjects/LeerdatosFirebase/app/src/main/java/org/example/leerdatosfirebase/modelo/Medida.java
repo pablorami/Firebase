@@ -2,26 +2,26 @@ package org.example.leerdatosfirebase.modelo;
 
 public class Medida {
 
-    private int Temperatura;
-    private int Humedad;
+    private double Temperatura;
+    private double Humedad;
 
 
     public Medida(){}
 
 
-    public int getTemperatura() {
+    public double getTemperatura() {
         return Temperatura;
     }
 
-    public int getHumedad() {
+    public double getHumedad() {
         return Humedad;
     }
 
-    public void setTemperatura(int Temperatura) {
+    public void setTemperatura(double Temperatura) {
         this.Temperatura = Temperatura;
     }
 
-    public void setHumedad(int Humedad) {
+    public void setHumedad(double Humedad) {
         this.Humedad = Humedad;
     }
 
