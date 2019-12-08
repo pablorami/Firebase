@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView textview = (TextView)findViewById(R.id.textview);
+        final TextView textview1 = (TextView)findViewById(R.id.textview1);
+        final TextView textview2 = (TextView)findViewById(R.id.textview2);
 
         //Instancia a la base de datos
         FirebaseDatabase fdb = FirebaseDatabase.getInstance();
@@ -37,17 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
-                //leeremos un objeto de tipo Estudiante
+                //leeremos un objeto de tipo Medida
                 GenericTypeIndicator<Medida> t = new GenericTypeIndicator<Medida>() {};
                 Medida medida = dataSnapshot.getValue(t);
 
                 //formamos el resultado en un string
-                String resultado = "Como objeto java:\n\n";
-                resultado += medida + "\n";
-                resultado += "Propiedad medida:\nTemperatura: " +medida.getTemperatura()+"\nHumedad: "+medida.getHumedad();
+                String resultado_temp =  "Temperatura: " +medida.getTemperatura() + " ºC";
+                String resultado_hum =  "\nHumedad: "+medida.getHumedad()+ " %";
 
                 //mostramos en el textview
-                textview.setText(resultado);
+                textview1.setText(resultado_temp);
+                textview2.setText(resultado_hum);
+
             }
             @Override
             public void onCancelled(DatabaseError error){
