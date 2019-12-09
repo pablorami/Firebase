@@ -6,6 +6,9 @@ import Adafruit_DHT
 #Para el envio de mensajes a traves de la api de Telegram
 import requests
 
+#Para la ejecucion de comandos bash desde el propio codigo
+import os
+
 #Tipo de sensor empleado
 sensor = Adafruit_DHT.AM2302 
 
@@ -29,7 +32,12 @@ if humidity is not None and temperature is not None:
     entrada ='*************VALORES ACTUALES *************'
     print(entrada)
     datos='Temperatura={0:0.1f}°C  Humedad={1:0.1f}%'.format(temperature, humidity)
-    print(datos)
+    humedad='{0:0.2f}'.format(humidity)
+    temperatura='{0:0.2f}'.format(temperature)
+    
+    #Publicacion de datos al broker mqtt
+    os.system('mosquitto_pub -h farmer.cloudmqtt.com -t "humedad" -m "'+str(humedad)+'" -p 11493 -u ClienteJava -P ClienteJava -d')
+    os.system('mosquitto_pub -h farmer.cloudmqtt.com -t "temperatura" -m "'+str(temperatura)+'" -p 11493 -u ClienteJava -P ClienteJava -d')
     if float(temperature) < TEMPERATURA_MINIMA:
         mensaje = 'Alerta! La temperatura de tu vivienda ha descendido de 20 ºC\n'
         print(mensaje)
