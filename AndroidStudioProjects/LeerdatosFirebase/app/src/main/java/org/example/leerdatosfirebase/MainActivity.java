@@ -40,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot){
                 //leeremos un objeto de tipo Medida
                 GenericTypeIndicator<Medida> t = new GenericTypeIndicator<Medida>() {};
-                Medida medida = dataSnapshot.getValue(t);
+                //Medida medida = dataSnapshot.getValue(t);
 
                 //formamos el resultado en un string
-                String resultado_temp =  "Temperatura: " +medida.getTemperatura() + " ºC";
-                String resultado_hum =  "\nHumedad: "+medida.getHumedad()+ " %";
+                String resultado_temp =  "Temperatura: " +dataSnapshot.child("temperatura").getValue() + " ºC";
+                String resultado_hum =  "\nHumedad: "+dataSnapshot.child("humedad").getValue()+ " %";
 
                 //mostramos en el textview
                 textview1.setText(resultado_temp);
