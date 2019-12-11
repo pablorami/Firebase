@@ -17,7 +17,8 @@ pin = 4
 
 #Datos conexion de telegram
 API_TOKEN = '1034926121:AAFoaCVrgLYNpCp-QC1dusW5bstKYlVJbxM'
-CHAT_ID = '13224841'
+CHAT_ID_DANI = '13224841'
+CHAT_ID = '-1001131090237'
 URL_BASE = 'https://api.telegram.org/bot'
 
 #Valores de alerta
